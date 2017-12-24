@@ -10,7 +10,7 @@ Originally built for the @officialmcaffee account after watching that whatever c
 * Knowledge of Python
 * A [Bittrex](https://bittrex.com/) account with BTC available, and an [API key](https://support.bitfinex.com/hc/en-us/articles/115002349625-API-Key-Setup-Login) with trade access.
 * Tolerance for risk (**this might fail miserably and lose money)
-* Twitter API access
+* Twitter streaming API access. This is the hardest part, it's a PITA to set up.
 
 ## Setup
 
@@ -20,9 +20,11 @@ Originally built for the @officialmcaffee account after watching that whatever c
 
 ## Running 
 
-1. Run `python bot.py` with the appropriate arguments (use `python bot.py --help` to see what they are)
+1. Run `python bot.py` with the appropriate environment variables set
 2. Profit (or loss)
 
 ## TODO
+
 [ ] Sentiment analysis on the tweet to make sure that it is a positive mention
+
 [ ] Sanity checks to make sure we don't do stupid stuff like buy more than once
