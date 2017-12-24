@@ -5,8 +5,8 @@ import os
 import re
 
 settings = {
-    'twitter_userid': "12137672", # gorillamania (for testing)
-    #'twitter_userid': "961445378", # officialmcafee
+    # 'twitter_userid': "12137672", # gorillamania (for testing)
+    'twitter_userid': "961445378", # officialmcafee
     'exchange_key': os.getenv("EXCHANGE_KEY"), # your Bittrex API key
     'exchange_secret': os.getenv("EXCHANGE_SECRET"), # your Bittrex API secret
     'buy_amount_btc': Decimal(0.75), # Amount to buy
