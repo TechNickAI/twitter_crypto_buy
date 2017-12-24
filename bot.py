@@ -1,11 +1,12 @@
 from decimal import Decimal
 from twython import TwythonStreamer
-import requests
+import json
 import os
+import requests
 import re
 
 settings = {
-    # 'twitter_userid': "12137672", # gorillamania (for testing)
+    #'twitter_userid': "12137672", # gorillamania (for testing)
     'twitter_userid': "961445378", # officialmcafee
     'exchange_key': os.getenv("EXCHANGE_KEY"), # your Bittrex API key
     'exchange_secret': os.getenv("EXCHANGE_SECRET"), # your Bittrex API secret
@@ -70,9 +71,10 @@ def buy_crypto(symbol):
 class OurStreamer(TwythonStreamer):
 
     def on_success(self, data):
-        print(data)
-        if 'text' in data:
-            handle_tweet(data["text"])
+        if "user" in data and data["user"]["id_str"] == settings["twitter_userid"]:
+            print(json.dumps(data, indent=2))
+            if 'text' in data:
+                handle_tweet(data["text"])
 
     def on_error(self, status_code, data):
         print("Error:", status_code, data)
