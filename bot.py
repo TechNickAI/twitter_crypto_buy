@@ -10,8 +10,8 @@ settings = {
     'twitter_userid': "961445378", # officialmcafee
     'exchange_key': os.getenv("EXCHANGE_KEY"), # your Bittrex API key
     'exchange_secret': os.getenv("EXCHANGE_SECRET"), # your Bittrex API secret
-    'buy_amount_btc': Decimal(0.75), # Amount to buy
-    'limit_multiplier': Decimal(1.05), # How much over the current ticker to set the limit order
+    'buy_amount_btc': Decimal(2), # Amount to buy
+    'limit_multiplier': Decimal(1.075), # How much over the current ticker to set the limit order
     'twitter_app_key': os.getenv("TWITTER_APP_KEY"),
     'twitter_app_secret': os.getenv("TWITTER_APP_SECRET"),
     'twitter_oauth_token': os.getenv("TWITTER_OAUTH_TOKEN"),
@@ -65,6 +65,8 @@ def buy_crypto(symbol):
     print("Buying %s of %s at %s" % (amount, symbol, price))
     response = e.bid(pair, price, amount, False)
     print(response.json())
+
+
 
 ## Set up the streamer
 # https://twython.readthedocs.io/en/latest/usage/streaming_api.html
